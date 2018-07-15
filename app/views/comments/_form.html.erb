@@ -11,7 +11,11 @@
 <br>
 
 <p>
+	<% if user_signed_in? %>
 	<%= f.submit %>
+	<% else %>
+	<%= link_to "Please Login to add a comment", new_user_session_path %>
+	<% end %>
 </p>
 
 <% end %>

@@ -4,10 +4,12 @@
 	</h1>
 
 	<p class="date">
-		Submitted <%= time_ago_in_words(@post.created_at) %> ago |
+		Submitted <%= time_ago_in_words(@post.created_at) %> ago 
+		<% if user_signed_in? %> |
 		<%= link_to "Edit", edit_post_path %> | 
 		<%= link_to "Delete", post_path, method: :delete, data: {confirm: "Are you sure?"} %>
 	</p>
+	<% end %>
 
 	<p class="body">
 		<%= @post.body %>
